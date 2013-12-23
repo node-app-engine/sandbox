@@ -32,6 +32,26 @@ describe('module.test.js', function () {
       }).should.throw("Disable module 'child_process'");
     });
 
+    it('should configaurable addons', function () {
+      Module.config({
+        disableModules: ['child_process'],
+        limitRoot: path.dirname(__dirname),
+        enableAddons: true,
+      });
+      var mod = new Module('.');
+      mod.load(path.join(fixtures, 'require_addon.js'));
+
+      Module.config({
+        disableModules: ['child_process'],
+        limitRoot: path.dirname(__dirname),
+        enableAddons: false,
+      });
+      mod = new Module('.');
+      (function () {
+        mod.load(path.join(fixtures, 'require_addon.js'));
+      }).should.throw(/Disable addons module .+\/microtime\.node\'$/);
+    });
+
     it('should throw request outoff the limitRoot dir file', function () {
       Module.config({
         limitRoot: __dirname + '////////////////',

@@ -11,10 +11,10 @@ Sandbox env for Node App Engine.
 
 ## Safe env
 
-* Control `fs` module, only read app scope file resouces
+* Control `fs` module, only read app scope file resouces: `nae-fs` module
 * Disable `child_process` module
 * Configurable `Control modules`, e.g.: `net`, `http`
-* Configurable `C/C++ Addons`
+* Configurable `C/C++ Addons`: `options.enableAddons = ture / false`
 
 ## Module load flow
 
