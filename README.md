@@ -1,11 +1,11 @@
 nae-sandbox
 =======
 
-[![Build Status](https://secure.travis-ci.org/fengmk2/nae-sandbox.png)](http://travis-ci.org/fengmk2/nae-sandbox) [![Coverage Status](https://coveralls.io/repos/fengmk2/nae-sandbox/badge.png)](https://coveralls.io/r/fengmk2/nae-sandbox) [![Dependency Status](https://gemnasium.com/fengmk2/nae-sandbox.png)](https://gemnasium.com/fengmk2/nae-sandbox)
+[![Build Status](https://secure.travis-ci.org/node-app-engine/nae-sandbox.png)](http://travis-ci.org/node-app-engine/nae-sandbox) [![Coverage Status](https://coveralls.io/repos/node-app-engine/nae-sandbox/badge.png)](https://coveralls.io/r/node-app-engine/nae-sandbox) [![Dependency Status](https://gemnasium.com/node-app-engine/nae-sandbox.png)](https://gemnasium.com/node-app-engine/nae-sandbox)
 
 [![NPM](https://nodei.co/npm/nae-sandbox.png?downloads=true&stars=true)](https://nodei.co/npm/nae-sandbox/)
 
-![logo](https://raw.github.com/fengmk2/nae-sandbox/master/logo.png)
+![logo](https://raw.github.com/node-app-engine/nae-sandbox/master/logo.png)
 
 Sandbox env for Node App Engine.
 
@@ -28,7 +28,22 @@ Only allows:
 /app/node_modules/*
 ```
 
+## SandBox Start Flows
 
+* SandBox manager create a sandbox child process: `sp`
+* `sp` use `SandboxModule` load `app` main file, so `app` run in the sandbox safe env.
+
+`app` code can not rewrite the sandbox codes.
+
+## From
+
+* `module.js` base on [node/v0.11.9/lib/module.js](https://raw.github.com/joyent/node/v0.11.9/lib/module.js)
+
+## Module load flows
+
+* Create root module in a sandbox: id: `"."`
+* root_module.load()
+* Module._extensions['.js'] => `root_module._compile()`
 
 ## Install
 
@@ -38,19 +53,16 @@ $ npm install nae-sandbox
 
 ## Usage
 
-```js
-var nae-sandbox = require('nae-sandbox');
+@see [examples/]()
 
-nae-sandbox.foo(function (err) {
-
-});
-```
+* [helloworld]()
+* [connect]()
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2013 fengmk2 &lt;fengmk2@gmail.com&gt;
+Copyright(c) nae team and other contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
