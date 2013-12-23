@@ -1,6 +1,6 @@
 {
   "name": "nae-sandbox",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sandbox env for Node App Engine.",
   "main": "index.js",
   "scripts": {
