@@ -26,14 +26,14 @@
     "mocha-lcov-reporter": "*",
     "mocha": "*"
   },
-  "homepage": "https://github.com/node-app-engine/nae-sandbox",
+  "homepage": "https://github.com/node-app-engine/sandbox",
   "repository": {
     "type": "git",
-    "url": "git://github.com/node-app-engine/nae-sandbox.git",
-    "web": "https://github.com/node-app-engine/nae-sandbox"
+    "url": "git://github.com/node-app-engine/sandbox.git",
+    "web": "https://github.com/node-app-engine/sandbox"
   },
   "bugs": {
-    "url": "https://github.com/node-app-engine/nae-sandbox/issues",
+    "url": "https://github.com/node-app-engine/sandbox/issues",
     "email": "fengmk2@gmail.com"
   },
   "keywords": [

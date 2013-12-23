@@ -1,11 +1,11 @@
 nae-sandbox
 =======
 
-[![Build Status](https://secure.travis-ci.org/node-app-engine/nae-sandbox.png)](http://travis-ci.org/node-app-engine/nae-sandbox) [![Coverage Status](https://coveralls.io/repos/node-app-engine/nae-sandbox/badge.png)](https://coveralls.io/r/node-app-engine/nae-sandbox) [![Dependency Status](https://gemnasium.com/node-app-engine/nae-sandbox.png)](https://gemnasium.com/node-app-engine/nae-sandbox)
+[![Build Status](https://secure.travis-ci.org/node-app-engine/sandbox.png)](http://travis-ci.org/node-app-engine/sandbox) [![Coverage Status](https://coveralls.io/repos/node-app-engine/sandbox/badge.png)](https://coveralls.io/r/node-app-engine/sandbox) [![Dependency Status](https://gemnasium.com/node-app-engine/sandbox.png)](https://gemnasium.com/node-app-engine/sandbox)
 
 [![NPM](https://nodei.co/npm/nae-sandbox.png?downloads=true&stars=true)](https://nodei.co/npm/nae-sandbox/)
 
-![logo](https://raw.github.com/node-app-engine/nae-sandbox/master/logo.png)
+![logo](https://raw.github.com/node-app-engine/sandbox/master/logo.png)
 
 Sandbox env for Node App Engine.
 
@@ -53,10 +53,10 @@ $ npm install nae-sandbox
 
 ## Usage
 
-@see [examples/]()
+@see [examples/](https://github.com/node-app-engine/sandbox/tree/master/examples)
 
-* [helloworld]()
-* [connect]()
+* [helloworld](https://github.com/node-app-engine/sandbox/tree/master/examples/helloworld)
+* [connect](https://github.com/node-app-engine/sandbox/tree/master/examples/connect)
 
 ## License
 

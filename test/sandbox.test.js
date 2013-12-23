@@ -12,6 +12,7 @@
 
 var should = require('should');
 var path = require('path');
+var http = require('http');
 var SandBox = require('../');
 
 describe('sandbox.test.js', function () {
@@ -22,6 +23,25 @@ describe('sandbox.test.js', function () {
         disableModules: ['child_process']
       });
       sb.start();
+    });
+
+    it('should run a http server', function (done) {
+      var appdir = path.join(path.dirname(__dirname), 'examples', 'connect');
+      var sb = new SandBox(appdir, {
+        disableModules: ['child_process']
+      });
+      sb.start();
+      setTimeout(function () {
+        http.get('http://127.0.0.1:3000', function (res) {
+          res.should.status(200);
+          res.on('data', function (data) {
+            data.toString().should.equal('Hello from Connect!\n');
+          });
+          res.on('end', function () {
+            done();
+          });
+        });
+      }, 100);
     });
   });
 });
