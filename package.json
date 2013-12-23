@@ -18,7 +18,6 @@
     "debug": ">=0.7.4"
   },
   "devDependencies": {
-    "microtime": "*",
     "mm": "*",
     "should": "*",
     "blanket": "*",
