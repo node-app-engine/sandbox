@@ -15,14 +15,15 @@
 var should = require('should');
 var path = require('path');
 var mm = require('mm');
-var Module = require('../lib/module');
+var sm = require('../lib/module');
+var Module = sm.SandboxModule;
 
 var fixtures = path.join(__dirname, 'fixtures');
 
 describe('module.test.js', function () {
   describe('module.load()', function () {
     it('should throw request disable module', function () {
-      Module.config({
+      sm.config({
         disableModules: ['child_process'],
         limitRoot: __dirname,
       });
@@ -33,7 +34,7 @@ describe('module.test.js', function () {
     });
 
     it('should configaurable addons', function () {
-      Module.config({
+      sm.config({
         disableModules: ['child_process'],
         limitRoot: path.dirname(__dirname),
         enableAddons: true,
@@ -41,7 +42,7 @@ describe('module.test.js', function () {
       var mod = new Module('.');
       mod.load(path.join(fixtures, 'require_addon.js'));
 
-      Module.config({
+      sm.config({
         disableModules: ['child_process'],
         limitRoot: path.dirname(__dirname),
         enableAddons: false,
@@ -53,7 +54,7 @@ describe('module.test.js', function () {
     });
 
     it('should throw request outoff the limitRoot dir file', function () {
-      Module.config({
+      sm.config({
         limitRoot: __dirname + '////////////////',
       });
       var mod = new Module('.');
@@ -62,4 +63,17 @@ describe('module.test.js', function () {
       }).should.throw("Cannot find module '../../lib/module'");
     });
   });
+
+  describe('securty hook', function () {
+    it('should not rewrite require method', function () {
+      sm.config({
+        limitRoot: __dirname,
+      });
+      var mod = new Module('.');
+      (function () {
+        mod.load(path.join(fixtures, 'try_to_change_require.js'));
+      }).should.throw("Cannot find module '../../lib/module'");
+    });
+  });
+
 });
