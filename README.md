@@ -58,6 +58,21 @@ $ npm install nae-sandbox
 * [helloworld](https://github.com/node-app-engine/sandbox/tree/master/examples/helloworld)
 * [connect](https://github.com/node-app-engine/sandbox/tree/master/examples/connect)
 
+## Authors
+
+```bash
+$ git summary
+
+ project  : nae-sandbox
+ repo age : 6 days
+ active   : 4 days
+ commits  : 11
+ files    : 31
+ authors  :
+    10  fengmk2                 90.9%
+     1  dead_horse              9.1%
+```
+
 ## License
 
 (The MIT License)

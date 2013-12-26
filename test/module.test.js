@@ -33,15 +33,7 @@ describe('module.test.js', function () {
       }).should.throw("Disable module 'child_process'");
     });
 
-    it('should configaurable addons', function () {
-      // sm.config({
-      //   disableModules: ['child_process'],
-      //   limitRoot: path.dirname(__dirname),
-      //   enableAddons: true,
-      // });
-      // var mod = new Module('.');
-      // mod.load(path.join(fixtures, 'require_addon.js'));
-
+    it('should disable addons: require("./addons")', function () {
       sm.config({
         disableModules: ['child_process'],
         limitRoot: path.dirname(__dirname),
@@ -50,7 +42,19 @@ describe('module.test.js', function () {
       var mod = new Module('.');
       (function () {
         mod.load(path.join(fixtures, 'require_addon.js'));
-      }).should.throw(/Disable addons module .+?'$/);
+      }).should.throw("Disable addons module './addons'");
+    });
+
+    it('should disable addons: require("./addons.node")', function () {
+      sm.config({
+        disableModules: ['child_process'],
+        limitRoot: path.dirname(__dirname),
+        enableAddons: false,
+      });
+      var mod = new Module('.');
+      (function () {
+        mod.load(path.join(fixtures, 'require_addon_2.js'));
+      }).should.throw("Disable addons module './addons.node'");
     });
 
     it('should throw request outoff the limitRoot dir file', function () {
