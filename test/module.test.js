@@ -50,7 +50,7 @@ describe('module.test.js', function () {
       var mod = new Module('.');
       (function () {
         mod.load(path.join(fixtures, 'require_addon.js'));
-      }).should.throw(/Disable addons module .+?\.node\'$/);
+      }).should.throw(/Disable addons module .+?'$/);
     });
 
     it('should throw request outoff the limitRoot dir file', function () {
