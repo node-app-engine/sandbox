@@ -13,6 +13,7 @@
 var should = require('should');
 var path = require('path');
 var http = require('http');
+var naefs = require('nae-fs');
 var SandBox = require('../');
 
 describe('sandbox.test.js', function () {
@@ -20,7 +21,13 @@ describe('sandbox.test.js', function () {
     it('should run a hello world on sandbox', function () {
       var appdir = path.join(path.dirname(__dirname), 'examples', 'helloworld');
       var sb = new SandBox(appdir, {
-        disableModules: ['child_process']
+        disableModules: ['child_process'],
+        modules: {
+          fs: naefs.create({
+            pwd: appdir,
+            limitRoot: appdir,
+          }),
+        }
       });
       sb.start();
     });

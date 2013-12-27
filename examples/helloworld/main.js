@@ -19,6 +19,18 @@ var fs = require('fs');
 console.log('hello world, file size: %d', fs.readFileSync(__filename).length);
 
 try {
+  fs.readFileSync('/home/someone/foo.txt');
+} catch (e) {
+  console.log('read file error: %s', e);
+}
+
+try {
+  require('nae-fs');
+} catch (e) {
+  console.log('require nae-fs error: %s', e);
+}
+
+try {
   require('../foo');
 } catch (e) {
   console.log('require foo: %s', e);

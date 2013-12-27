@@ -13,6 +13,8 @@ for (var k in require.cache) {
 assert.strictEqual(fs, require('fs'));
 assert.notStrictEqual(foo, require('./foo'));
 
+console.log('super_ %s', module.constructor.super_);
+
 module.constructor._resolveFilename = function () {
   throw new Error('hook _resolveFilename error');
 };
