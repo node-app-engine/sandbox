@@ -53,6 +53,27 @@ $ npm install nae-sandbox
 
 ## Usage
 
+### Start a Sandbox
+
+```js
+var SandBox = require('nae-sandbox');
+var naefs = require('nae-fs');
+
+var appdir = path.join(path.dirname(__dirname), 'examples', 'helloworld');
+var sb = new SandBox(appdir, {
+  disableModules: ['child_process'],
+  modules: {
+    fs: naefs.create({
+      pwd: appdir,
+      limitRoot: appdir,
+    }),
+  }
+});
+sb.start();
+```
+
+### Examples
+
 @see [examples/](https://github.com/node-app-engine/sandbox/tree/master/examples)
 
 * [helloworld](https://github.com/node-app-engine/sandbox/tree/master/examples/helloworld)
