@@ -3,4 +3,4 @@ node_js:
   - '0.11'
 script: make test-coveralls
 install:
-  - 'npm install --registry=http://registry.cnpmjs.org --cache=${HOME}/.npm/.cache/cnpm --disturl=http://dist.u.qiniudn.com'
+  - 'make install'

@@ -7,9 +7,9 @@ nae-sandbox
 
 ![logo](https://raw.github.com/node-app-engine/sandbox/master/logo.png)
 
-Sandbox env for Node App Engine.
+Sandbox Environment for Node App Engine.
 
-## Safe env
+## Safe Environment
 
 * Control `fs` module, only read app scope file resouces: `nae-fs` module
 * Disable `child_process` module
@@ -31,7 +31,7 @@ Only allows:
 ## SandBox Start Flows
 
 * SandBox manager create a sandbox child process: `sp`
-* `sp` use `SandboxModule` load `app` main file, so `app` run in the sandbox safe env.
+* `sp` use `SandboxModule` load `app` main file, so `app` run in the sandbox safe environment.
 
 `app` code can not rewrite the sandbox codes.
 
@@ -48,7 +48,7 @@ Only allows:
 ## Install
 
 ```bash
-$ npm install nae-sandbox
+$ npm install nae-sandbox --registry=http://registry.cnpmjs.org --disturl=http://dist.u.qiniudn.com
 ```
 
 ## Usage

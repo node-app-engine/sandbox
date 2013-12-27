@@ -1,7 +1,7 @@
 {
   "name": "nae-sandbox",
   "version": "0.0.2",
-  "description": "Sandbox env for Node App Engine.",
+  "description": "Sandbox Environment for Node App Engine.",
   "main": "index.js",
   "scripts": {
     "test": "make test-all"
@@ -39,7 +39,7 @@
     "email": "fengmk2+nae@gmail.com"
   },
   "keywords": [
-    "nae", "sandbox", "module", "appengine", "safebox"
+    "nae", "sandbox", "module", "appengine", "safebox", "environment"
   ],
   "engines": {
     "node": ">= 0.11.9"
