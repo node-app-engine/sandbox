@@ -66,6 +66,18 @@ describe('module.test.js', function () {
         mod.load(path.join(fixtures, 'limit_root.js'));
       }).should.throw("Cannot find module '../../lib/module'");
     });
+
+    it('should extend globals works fine', function (done) {
+      sm.config({
+        'globals' : {
+          'foo' : function () {
+            should.ok(true);
+            done();
+          },
+        }
+      });
+      (new Module('.')).load(path.join(fixtures, 'extend_globals.js'));
+    });
   });
 
   describe('securty hook', function () {
